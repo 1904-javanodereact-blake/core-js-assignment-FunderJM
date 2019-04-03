@@ -8,9 +8,9 @@ function bubbleSort(numArray) {
 
     for(n; n<a; n++){
         for(let j = n; j>0 ; j--){
-            if(numArray[j] > numArray[j+1]){
-                let pH = numArray[j+1];
-                numArray[j+1] = numArray[j];
+            if(numArray[j] < numArray[j-1]){
+                let pH = numArray[j-1];
+                numArray[j-1] = numArray[j];
                 numArray[j] = pH;
             }
         }
