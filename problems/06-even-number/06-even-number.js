@@ -3,15 +3,19 @@ Define function: isEven(someNum)
 Return true if even, false if odd.
 Do not use % operator. */
 function isEven(someNum) {
-    let even= (someNum - Math.floor(someNum)) == 0;
+    let div = someNum/2;
+    let numerator = Math.trunc(div);
+    let mult = numerator * 2;
 
-  if(even){
-      console.log(`True`);
-      console.log((someNum - Math.floor(someNum)));
-  }else{
-      console.log(`False`);
-      console.log((someNum - Math.floor(someNum)));
-  }
+    if(div === mult){
+        console.log(true);
+    }else if(div != mult){
+        console.log(false);
+    }
 }
 
-let a = isEven(9);
+let a = 9;
+
+console.log(`The number ${a} is even.`);
+isEven(a);
+
