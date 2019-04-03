@@ -7,14 +7,14 @@ function isEven(someNum) {
     let numerator = Math.trunc(div);
     let mult = numerator * 2;
 
-    if(div === mult){
+    if(someNum == mult){
         console.log(true);
-    }else if(div != mult){
+    }else if(someNum != mult){
         console.log(false);
     }
 }
 
-let a = 9;
+let a = 13;
 
 console.log(`The number ${a} is even.`);
 isEven(a);
