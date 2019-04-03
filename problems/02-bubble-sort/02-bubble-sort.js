@@ -4,23 +4,17 @@ Use the bubble sort algorithm to sort the array.
 Return the sorted array. */
 function bubbleSort(numArray) {
     let a = numArray.length;
-    let n = 0;
-    let trade = false;
+    let n = 1;
 
-    do{
-        for(n; n<a; n++){
-            if(numArray[n] > numArray[n+1]){
-                let pH = numArray[n+1];
-                numArray[n+1] = numArray[n];
-                numArray[n] = pH;
-            }else if(numArray[n]< numArray[n+1]){
-                let pH = numArray[n];
-                numArray[n] = numArray[n+1];
-                numArray[n+1] = pH; 
-                trade = true;
+    for(n; n<a; n++){
+        for(let j = n; j>0 ; j--){
+            if(numArray[j] > numArray[j+1]){
+                let pH = numArray[j+1];
+                numArray[j+1] = numArray[j];
+                numArray[j] = pH;
             }
         }
-    }while(trade != true)
+    }
 }
 
 let myArr = [
