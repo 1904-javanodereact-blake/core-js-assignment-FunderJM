@@ -3,19 +3,24 @@ Define function: bubbleSort(numArray)
 Use the bubble sort algorithm to sort the array.
 Return the sorted array. */
 function bubbleSort(numArray) {
-    let a = numArray.length - 1;
+    let a = numArray.length;
     let n = 0;
+    let trade = false;
 
-    for(n; n<a; n++){
-        for(a; a>n; a--){
-            if(numArray[n] > numArray[a]){
-                let ph = numArray[a];
-                numArray[a] = numArray[n];
-                numArray[n] = ph;
-                console.log(numArray);
+    do{
+        for(n; n<a; n++){
+            if(numArray[n] > numArray[n+1]){
+                let pH = numArray[n+1];
+                numArray[n+1] = numArray[n];
+                numArray[n] = pH;
+            }else if(numArray[n]< numArray[n+1]){
+                let pH = numArray[n];
+                numArray[n] = numArray[n+1];
+                numArray[n+1] = pH; 
+                trade = true;
             }
         }
-    }
+    }while(trade != true)
 }
 
 let myArr = [
