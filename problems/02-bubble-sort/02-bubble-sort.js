@@ -3,23 +3,19 @@ Define function: bubbleSort(numArray)
 Use the bubble sort algorithm to sort the array.
 Return the sorted array. */
 function bubbleSort(numArray) {
-    let lean = true;
-    do{
-        let n = 0;
-        let m = numArray.length;
-        for(n; n < numArray.length; n++){
-            for(m; m > n; m--){
-            if(numArray[n] > numArray[numArray.length]){
-                let placeholder = numArray[numArray.length];
-                numArray[numArray.length] = numArray[n];
-                numArray[n] = placeholder;
-                Console.log(numArray);
-            }else{
-                lean = false;
+    let a = numArray.length - 1;
+    let n = 0;
+
+    for(n; n<a; n++){
+        for(a; a>n; a--){
+            if(numArray[n] > numArray[a]){
+                let ph = numArray[a];
+                numArray[a] = numArray[n];
+                numArray[n] = ph;
+                console.log(numArray);
             }
         }
-        }
-    }while(lean != false)
+    }
 }
 
 let myArr = [
