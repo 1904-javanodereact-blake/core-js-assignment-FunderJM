@@ -18,4 +18,9 @@ let a = 13;
 
 console.log(`The number ${a} is even.`);
 isEven(a);
-
+console.log(`The number ${6} is even.`);
+isEven(6);
+console.log(`The number ${94} is even.`);
+isEven(94);
+console.log(`The number ${37} is even.`);
+isEven(37);
