@@ -47,7 +47,7 @@ function printShape(shape, height, character) {
       let count = Math.trunc(height/2);
 
       if( h === (count - h)) {
-        diArr = (...diArr, character, ...diArr);
+        
       }
       console.log(diArr.join(''));
     }
