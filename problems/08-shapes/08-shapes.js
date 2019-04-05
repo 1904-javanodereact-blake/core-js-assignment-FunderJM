@@ -45,13 +45,24 @@ function printShape(shape, height, character) {
       rowArr.unshift('');
     }
     for(let h = 0; h < height; h++){
+      let count = 1;
+      rowArr.splice(height/2,count,character);
       diArr.unshift(rowArr);
+      console.log(diArr[h].join(''));
+      
+      if(h <= rowArr.length/2){
+        count + 2;
+      }else {
+        count - 2;
+      }
     }
     break;
   }
 }
 
 console.log('This is a Triangle:');
-printShape('Triangle', 7, "$");
+printShape('Triangle', 5, "$");
 console.log('This is a Square:');
 printShape('Square', 3, "%");
+console.log('This is a Diamond:');
+printShape('Diamond', 5, "*");
