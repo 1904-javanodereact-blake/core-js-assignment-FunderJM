@@ -40,21 +40,16 @@ function printShape(shape, height, character) {
     break;
     case 'Diamond':
     let diArr = [];
-    let rowArr = [];
     for(let h = 0; h < height; h++){
-      rowArr.unshift('');
+      diArr[h] = ' ';
     }
     for(let h = 0; h < height; h++){
-      let count = 1;
-      rowArr.splice(height/2,count,character);
-      diArr.unshift(rowArr);
-      console.log(diArr[h].join(''));
-      
-      if(h <= rowArr.length/2){
-        count + 2;
-      }else {
-        count - 2;
+      let count = Math.trunc(height/2);
+
+      if( h === (count - h)) {
+        diArr = (...diArr, character, ...diArr);
       }
+      console.log(diArr.join(''));
     }
     break;
   }
