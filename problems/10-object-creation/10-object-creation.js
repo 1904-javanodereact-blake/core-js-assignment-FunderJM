@@ -14,10 +14,11 @@ function OS(name,age) {
 
 let myOS = new OS('Windows 10','3');
 
-let worstOS = {
-    function constructor(name = 'Windows 8', age = '6');
-}
 
 console.log('This is the best OS : ', osVersion);
 console.log('This is my current OS : ', myOS);
+
+let {name, age} = worstOS;
+worstOS.name = 'windows 8';
+worstOS.age = '6';
 console.log('This is the worst OS: ', worstOS);
