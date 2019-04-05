@@ -8,7 +8,7 @@ let osVersion = {
 }
 
 class OS{
-    constructor(name,age){
+    function constructor [name,age]{
         this.name = name;
         this.age = age;
     }
@@ -16,9 +16,9 @@ class OS{
 
 let myOS = new OS('Windows 10','3');
 
-let{name = 'Windows 8',age = '6'} = new OS;
-worstOS.name = 'Windows 8';
-worstOS.age = '6';
+let worstOS = {
+    function constructor: [name = 'Windows 8', age = '6'];
+}
 
 console.log('This is the best OS : ', osVersion);
 console.log('This is my current OS : ', myOS);
