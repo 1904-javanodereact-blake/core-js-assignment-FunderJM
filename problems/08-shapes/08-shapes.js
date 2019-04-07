@@ -39,41 +39,41 @@ function printShape(shape, height, character) {
       }
       break;
     case 'Diamond':
-      let diArr = [];           
-      let rebound = 0;
-      let delcount = 1;
-      let refill = height - 1;
-      for (let h = 0; h < height; h++) {
-        diArr[h] = ' ';
-      }
+    let diArr = [];           
+    let rebound = 0;
+    let delcount = 1;
+    let refill = height - 1;
+    for (let h = 0; h < height; h++) {
+      diArr[h] = ' ';
+    }
 
-      let count = Math.trunc(height/2);
-      
-      for (let h = 0; h < height; h++) {
+    let count = Math.trunc(height/2);
+    
+    for (let h = 0; h < height; h++) {
 
-        if (count > 0 && rebound === 0) {
-          for(let n = 0; n < delcount; n++){
-            diArr[count] = character;
-          }
-          console.log(diArr.join(''));
-          count--;
-          delcount = delcount + 1;
-        }else if(count === 0 && rebound === 0){
-          for(let m = 0; m<height; m++){
-            diArr[m] = character;
-          }
-          console.log(diArr.join(''));
-          rebound++;          
-        }else if(rebound > 0 ){
-          for(let p = rebound; p < refill; p++){
-            diArr[p] = character;
-          }
-          
-          console.log(diArr.join(''));
-          rebound = rebound + 1;
-          refill--;
+      if (count > 0 && rebound === 0) {
+        for(let n = 0; n < delcount; n++){
+          diArr[count] = character;
         }
-      }     
+        console.log(diArr.join(''));
+        count--;
+        delcount = delcount + 1;
+      }else if(count === 0 && rebound === 0){
+        for(let m = 0; m<height; m++){
+          diArr[m] = character;
+        }
+        console.log(diArr.join(''));
+        rebound++;          
+      }else if(rebound > 0 ){
+        for(let p = rebound; p < refill; p++){
+          diArr[p] = character;
+        }
+        
+        console.log(diArr.join(''));
+        rebound = rebound + 1;
+        refill--;
+      }
+    }
       break;
   }
 }
