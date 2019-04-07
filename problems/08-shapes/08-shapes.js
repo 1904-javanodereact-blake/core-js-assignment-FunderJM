@@ -21,42 +21,59 @@ Example for printShape("Diamond", 5, "*");
   * 
 */
 function printShape(shape, height, character) {
-  switch(shape){
+  switch (shape) {
     case 'Triangle':
-    let triArr =[];
-    for(let h =0; h < height; h++){
-      triArr.unshift(character);
-      console.log(triArr.join(''));
-    }
-    break;
+      let triArr = [];
+      for (let h = 0; h < height; h++) {
+        triArr.unshift(character);
+        console.log(triArr.join(''));
+      }
+      break;
     case 'Square':
-    let sqArr = [];
-    for(let w =0; w < height; w++){
-      sqArr.unshift(character);
+      let sqArr = [];
+      for (let w = 0; w < height; w++) {
+        sqArr.unshift(character);
       }
-    for(let h =0; h < height; h++){
-      console.log(sqArr.join(''));
-    }
-    break;
+      for (let h = 0; h < height; h++) {
+        console.log(sqArr.join(''));
+      }
+      break;
     case 'Diamond':
-    let diArr = [];
-    for(let h = 0; h < height; h++){
-      diArr[h] = ' ';
-    }
-    for(let h = 0; h < height; h++){
-      let count = Math.trunc(height/2);
-
-      if( h === (count - h)) {
-        
+      let diArr = [];
+      let count = Math.trunc(height / 2);
+      let rebound = 0;
+      let delcount = height%2;
+      for (let h = 0; h < height; h++) {
+        diArr[h] = ' ';
       }
-      console.log(diArr.join(''));
-    }
-    break;
+      for (let h = 0; h < height; h++) {
+
+        if (count > 0 && rebound === 0) {
+          for(let n = delcount; n > 0; n--){
+            diArr[count] = character;
+          }
+          console.log(diArr.join(''));
+          count--;
+          delcount = delcount + 2;
+        }else if(count === 0 && rebound === 0){
+          for(let m = 0; m<height; m++){
+            diArr[m] = character;
+          }
+          console.log(diArr.join(''));
+          rebound++;          
+        }else if(rebound > 0 ){
+          diArr.splice(rebound, delcount, character);
+          console.log(diArr.join(''));
+          rebound = rebound + 1;
+          delcount = delcount - 2;
+        }
+      }     
+      break;
   }
 }
 
 console.log('This is a Triangle:');
-printShape('Triangle', 5, "$");
+printShape('Triangle', 3, "$");
 console.log('This is a Square:');
 printShape('Square', 3, "%");
 console.log('This is a Diamond:');
