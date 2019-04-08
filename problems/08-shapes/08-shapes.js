@@ -47,7 +47,7 @@ function printShape(shape, height, character) {
       diArr[h] = ' ';
     }
 
-    let count = Math.trunc(height/2);
+    let count = Math.floor(diArr.length/2);
     
     for (let h = 0; h < height; h++) {
 
@@ -57,7 +57,7 @@ function printShape(shape, height, character) {
         }
         console.log(diArr.join(''));
         count--;
-        delcount = delcount + 1;
+        delcount = delcount + 2;
       }else if(count === 0 && rebound === 0){
         for(let m = 0; m<height; m++){
           diArr[m] = character;
