@@ -39,48 +39,35 @@ function printShape(shape, height, character) {
       }
       break;
     case 'Diamond':
-    let diArr = [];           
+    let blank = " ";
+    let count = Math.trunc(height/2);          
     let rebound = 0;
-    let delcount = 1;
-    let refill = height - 1;
-    for (let h = 0; h < height; h++) {
-      diArr[h] = ' ';
-    }
-
-    let count = Math.floor(diArr.length/2);
+    let fillCount = 1;
+    let refill = height -2;
+    
     
     for (let h = 0; h < height; h++) {
 
-      if (count > 0 && rebound === 0) {
-        for(let n = 0; n < delcount; n++){
-          diArr[count] = character;
-        }
-        console.log(diArr.join(''));
+      if (count > 0) {
+        console.log(blank.repeat(count - 1),character.repeat(fillCount));
         count--;
-        delcount = delcount + 2;
+        fillCount = fillCount + 2;
       }else if(count === 0 && rebound === 0){
-        for(let m = 0; m<height; m++){
-          diArr[m] = character;
-        }
-        console.log(diArr.join(''));
+        console.log(character.repeat(height));
         rebound++;          
       }else if(rebound > 0 ){
-        for(let p = rebound; p < refill; p++){
-          diArr[p] = character;
-        }
-        
-        console.log(diArr.join(''));
-        rebound = rebound + 1;
-        refill--;
+        console.log(blank.repeat(rebound-1),character.repeat(refill));
+        refill = refill -2;
+        rebound++;
       }
     }
-      break;
+    break;
   }
 }
 
 console.log('This is a Triangle:');
-printShape('Triangle', 3, "$");
+printShape('Triangle', 5, "$");
 console.log('This is a Square:');
 printShape('Square', 3, "%");
 console.log('This is a Diamond:');
-printShape('Diamond', 5, "*");
+printShape('Diamond', 7, "*");
